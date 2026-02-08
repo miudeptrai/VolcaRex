@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmq7sno4otabi"]
 
 [ext_resource type="Texture2D" uid="uid://dn20phhs5wef6" path="res://asset/tree-models-Sheet.png" id="1_2xuln"]
-[ext_resource type="Script" uid="uid://ck4ejvkm6y67j" path="res://scripts/double_tree.gd" id="1_wfsc3"]
+[ext_resource type="Script" uid="uid://dn4x8vm7aw4yh" path="res://scripts/single_large_tree.gd" id="1_wfsc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfsc3"]
 atlas = ExtResource("1_2xuln")

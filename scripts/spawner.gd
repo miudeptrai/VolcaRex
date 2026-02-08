@@ -2,6 +2,7 @@ extends Node2D
 
 const SINGLE_LARGE_TREE = preload("uid://sgp31qxs7aaf");
 const DOUBLE_TREE = preload("uid://dmq7sno4otabi");
+const TRIPLE_TREE = preload("uid://dxu21tiephrur")
 
 var spawner_range: Array[float] = [0.9, 3.0];
 # size: small (1/2) normal (1) big(2), range [a,b);
@@ -12,8 +13,9 @@ var size_range: Array = [
 ];
 
 var variety_range: Array = [
-	{"min": 0.0,  "max": 0.5,  "scene": SINGLE_LARGE_TREE}, 
-	{"min": 0.5,  "max": 1.0, "scene": DOUBLE_TREE}
+	{"min": 0.0,  "max": 0.4,  "scene": SINGLE_LARGE_TREE}, 
+	{"min": 0.4,  "max": 0.7, "scene": DOUBLE_TREE},
+	{"min": 0.7,  "max": 1.0, "scene": TRIPLE_TREE}
 ];
 
 var my_obs = [];

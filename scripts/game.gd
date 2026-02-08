@@ -1,7 +1,7 @@
 extends Node2D
 
 var score: int = 0;
-var speed: float = 200.0;
+var speed: float = 195.0;
 
 var speed_threshold: int = 10;
 
@@ -13,7 +13,7 @@ func _on_timer_timeout() -> void:
 	
 	# Update speed
 	if (score % 10 == 0):
-		speed += 5;
+		speed = minf(800.0, speed + 5.0);
 		#print("New speed %d" % speed);
 	
 	$Label.text = "Score: %d" % score;
