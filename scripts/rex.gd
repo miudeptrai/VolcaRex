@@ -4,11 +4,15 @@ const GRAVITY: float = 1800.0;
 const JUMP_FORCE: float = 700.0;
 
 var is_game_over: bool = false;
+var play_animation: bool = false;
 
 #var jump_pressed_time: float = -1.0; #about 694 - 701 ms
 #var was_on_floor: bool = false;
 
 signal game_over;
+
+func _on_game_start() -> void:
+	play_animation = true;
 
 func _on_hit() -> void:
 	print("Hit");
@@ -18,9 +22,11 @@ func _on_hit() -> void:
 
 func _ready() -> void:
 	add_to_group("rex");
+	
+	get_parent().game_start.connect(_on_game_start);
 
 func _physics_process(delta: float) -> void:
-	if (is_on_floor() and not is_game_over):
+	if (is_on_floor() and not is_game_over and play_animation):
 		$AnimatedSprite2D.play("walk");
 	
 	if (not is_on_floor()):

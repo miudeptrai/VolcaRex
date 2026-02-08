@@ -69,7 +69,9 @@ func _on_timer_timeout() -> void:
 func _on_game_over() -> void:
 	$Timer.stop();
 
+func _on_game_start() -> void:
+	$Timer.start(randf_range(spawner_range[0], spawner_range[1]));
+
 func _ready() -> void:
 	get_tree().get_first_node_in_group("rex").game_over.connect(_on_game_over);
-	
-	$Timer.start(randf_range(spawner_range[0], spawner_range[1]));
+	get_parent().game_start.connect(_on_game_start);

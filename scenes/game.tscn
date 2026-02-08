@@ -20,7 +20,7 @@ position = Vector2(120, 190)
 [node name="Spawner" parent="." unique_id=1481841243 instance=ExtResource("3_lnu2h")]
 position = Vector2(754, 140)
 
-[node name="Label" type="Label" parent="." unique_id=1126589890]
+[node name="Score" type="Label" parent="." unique_id=1126589890]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: 0"
@@ -30,6 +30,15 @@ wait_time = 0.1
 
 [node name="Ground" parent="." unique_id=1893952313 instance=ExtResource("5_iywne")]
 position = Vector2(24, 226)
+
+[node name="Label" type="Label" parent="." unique_id=1683213227]
+offset_left = 59.0
+offset_top = 84.0
+offset_right = 382.0
+offset_bottom = 144.0
+text = "Press <Space> to start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="game_over" from="Rex" to="." method="_on_rex_game_over"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
