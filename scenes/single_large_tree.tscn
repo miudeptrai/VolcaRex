@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://sgp31qxs7aaf"]
+
+[ext_resource type="Texture2D" uid="uid://dn20phhs5wef6" path="res://asset/tree-models-Sheet.png" id="1_e4d02"]
+[ext_resource type="Script" uid="uid://dn4x8vm7aw4yh" path="res://scripts/single_large_tree.gd" id="1_phyuc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phyuc"]
+atlas = ExtResource("1_e4d02")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fodad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phyuc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_phyuc"]
+radius = 17.0
+height = 52.0
+
+[node name="Single Large Tree" type="CharacterBody2D" unique_id=1881973228]
+platform_floor_layers = 4294967040
+script = ExtResource("1_phyuc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1824321643]
+sprite_frames = SubResource("SpriteFrames_fodad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020146900]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_phyuc")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://buqsuw3cbkbu2"]
+
+[ext_resource type="Script" uid="uid://dvftd86pwqawo" path="res://scripts/floor.gd" id="1_kuqtn"]
+[ext_resource type="Texture2D" uid="uid://cbeiufdtyqtuu" path="res://asset/floor.png" id="1_ukw5w"]
+
+[node name="Floor" type="CharacterBody2D" unique_id=1610374328]
+script = ExtResource("1_kuqtn")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=315223421]
+position = Vector2(240, 152)
+texture = ExtResource("1_ukw5w")

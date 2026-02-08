@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dmq7sno4otabi"]
+
+[ext_resource type="Texture2D" uid="uid://dn20phhs5wef6" path="res://asset/tree-models-Sheet.png" id="1_2xuln"]
+[ext_resource type="Script" uid="uid://ck4ejvkm6y67j" path="res://scripts/double_tree.gd" id="1_wfsc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfsc3"]
+atlas = ExtResource("1_2xuln")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_88wbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfsc3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xuln"]
+radius = 27.0
+
+[node name="Double Tree" type="CharacterBody2D" unique_id=1740455102]
+position = Vector2(-12, -13)
+script = ExtResource("1_wfsc3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1114279165]
+sprite_frames = SubResource("SpriteFrames_88wbp")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1193327344]
+position = Vector2(29, 0)
+sprite_frames = SubResource("SpriteFrames_88wbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312060821]
+position = Vector2(13, 6)
+shape = SubResource("CircleShape2D_2xuln")
