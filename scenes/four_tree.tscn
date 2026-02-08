@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bjb8iesxqao13"]
+
+[ext_resource type="Script" uid="uid://dn4x8vm7aw4yh" path="res://scripts/single_large_tree.gd" id="1_eqlu3"]
+[ext_resource type="Texture2D" uid="uid://dn20phhs5wef6" path="res://asset/tree-models-Sheet.png" id="2_4gtu2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n8gs"]
+atlas = ExtResource("2_4gtu2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fodad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n8gs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tes41"]
+radius = 29.0
+height = 92.0
+
+[node name="Triple Tree" type="CharacterBody2D" unique_id=1881973228]
+position = Vector2(-28, 0)
+platform_floor_layers = 4294967040
+script = ExtResource("1_eqlu3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1824321643]
+sprite_frames = SubResource("SpriteFrames_fodad")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1601664236]
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fodad")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1463990660]
+position = Vector2(65, 16)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fodad")
+frame_progress = 0.94720364
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2008603453]
+position = Vector2(41, 0)
+sprite_frames = SubResource("SpriteFrames_fodad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020146900]
+position = Vector2(28, 3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tes41")
